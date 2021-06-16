@@ -1,0 +1,29 @@
+﻿@model ShopCartViewModel
+
+    <div class="container" style="background-color:rgb(54,61,70); margin-top:300px; padding:20px;">
+
+        @{
+            var sum = 0;
+            var help = 0;
+        
+        }
+
+        @foreach (var el in Model.shopCart.listShopItem)
+        {
+
+            help = el.drug.price;
+            sum = sum + help;
+            
+        <div class="alert alert-warning mt-3" style="padding:15px;">
+            <b style="color:rgb(54,61,70)">Препарат: </b>@el.drug.name<br />
+            <b style="color:rgb(54,61,70)">Ціна: </b>@el.drug.price.ToString("c")<br />
+            <b style="color:rgb(54,61,70)">Виробник: </b>@el.drug.producer
+        </div>
+        }
+        <h3>До сплати: @sum.ToString()</h3>
+        <hr />
+        <a class="btn btn-danger" asp-controller="Order" asp-action="CheckOut">
+            Замовити
+        </a>
+
+    </div>

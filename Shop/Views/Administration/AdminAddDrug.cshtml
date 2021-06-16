@@ -1,0 +1,72 @@
+﻿@model Medicines
+
+
+<div class="row" style="color:aqua; margin-bottom:165px;">
+    <div class="col-md-12">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger">
+
+            </div>
+
+            <div class="form-group">
+                <label asp-for="description">Опис товару</label>
+                <input asp-for="description" class="form-control" />
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="producer">Виробник</label>
+                <input asp-for="producer" class="form-control" />
+                <span asp-validation-for="producer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="price">Ціна</label>
+                <input asp-for="price" class="form-control" />
+                <span asp-validation-for="price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="name">Назва</label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="doze">Кількість діючої речовини</label>
+                <input asp-for="doze" class="form-control" />
+                <span asp-validation-for="doze" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="volume">Об'єм</label>
+                <input asp-for="volume" class="form-control" />
+                <span asp-validation-for="volume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="img">Посилання на зображення</label>
+                <input asp-for="img" class="form-control" />
+                <span asp-validation-for="img" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="custom-checkbox">
+                    <label asp-for="available">
+                        <input asp-for="available" />
+                        @Html.DisplayNameFor(m => m.available)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="custom-checkbox">
+                    <label asp-for="isFavorite">
+                        <input asp-for="isFavorite" />
+                        @Html.DisplayNameFor(m => m.isFavorite)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="categoryID">Id категорії</label>
+                <input asp-for="categoryID" class="form-control" />
+                <span asp-validation-for="categoryID" class="text-danger"></span>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Вхід</button>
+        </form>
+    </div>
+</div>

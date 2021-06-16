@@ -1,0 +1,34 @@
+﻿@model Order
+
+<div class="row" style="color:aliceblue;margin-bottom:235px;" >
+   
+    <div class="col-md-12">
+        <h2 class="h2 m-3 ml-0">Оформленя замовлення</h2>
+        <form asp-action="CheckOut" method="post">
+            <div class="form-group">
+                <label asp-for="name"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="surname"></label>
+                <input asp-for="surname" class="form-control" />
+                <span asp-validation-for="surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="phone"></label>
+                <input asp-for="phone" class="form-control" />
+                <span asp-validation-for="phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="custom-checkbox">
+                    <label asp-for="isByСourier">
+                        <input asp-for="isByСourier" />
+                        @Html.DisplayNameFor(m=>m.isByСourier)
+                    </label>
+                </div>
+            </div>
+            <input class="btn-success" type="submit" value="Замовити" />
+        </form>
+    </div>
+</div>

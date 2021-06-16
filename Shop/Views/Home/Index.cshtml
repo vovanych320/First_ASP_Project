@@ -1,0 +1,15 @@
+﻿@model HomeViewModel
+
+<div class="d-flex justify-content-center" style="color:aliceblue;margin-top:60px">
+<h2>Найпопулярніші товари</h2>
+</div>
+<div class="d-flex justify-content-center">
+    <div style="display:flex; flex-wrap:wrap;">
+        @{
+            foreach (Medicines drug in Model.favDrugs)
+            {
+                @Html.Partial("AllDrugs", drug);
+            }
+        }
+    </div>
+</div>

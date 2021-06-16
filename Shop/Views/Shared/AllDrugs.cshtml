@@ -1,0 +1,39 @@
+﻿@model Shop.Data.Models.Medicines
+
+    <div class="col-lg-4" style="        background-color: rgb(54,61,70);
+        padding: 10px;
+        color: white;
+        border: 1px solid white;
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 5px">
+
+        <div>
+            <img class="img-thumbnail" src="@Model.img" alt="@Model.name" style="margin-top:15px; min-height:340px; 
+border-radius:5px" />
+            <h2 class="d-flex justify-content-center" style="color:rgb(150,165,170)">@Model.name</h2>
+        </div>
+
+
+        <p style="height:100%">@Model.description</p>
+        <div>
+            <p><span style="color:rgb(165,170,176)">Виробник: </span>@Model.producer</p>
+            <p><span style="color:rgb(165,170,176)">Категорія: </span>@Model.Category.name</p>
+            <p><span style="color:rgb(165,170,176)">Обсяг: </span>@Model.volume</p>
+            <p><span style="color:rgb(165,170,176)">Діючої речовини: </span>@Model.doze</p>
+            <div class="d-flex justify-content-between " style="width:100%">
+                <h4 style="color:rgb(165,170,176)">Ціна: @Model.price.ToString("c")</h4>
+                @if (signInManager.IsSignedIn(User))
+                {
+                    <p><a type="button" class="btn btn-primary" asp-controller="ShopCart" asp-action="addToCart" asp-route-id="@Model.id">В корзину</a> </p>
+                }
+                else
+                {
+
+                }
+
+            </div>
+        </div>
+    </div>
